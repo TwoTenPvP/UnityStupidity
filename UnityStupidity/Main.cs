@@ -572,5 +572,6 @@ namespace UnityEngine
         public static float unscaledDeltaTime => 0;
         public static float time => 0;
         public static float unscaledTime => 0;
+        public static int frameCount => 0;
     }
 }

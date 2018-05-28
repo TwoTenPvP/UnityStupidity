@@ -183,28 +183,42 @@ namespace UnityEngine.AI
 
 namespace UnityEngine
 {
+    public static class Mathf
+    {
+        public static float Infinity = float.PositiveInfinity;
+    }
     public struct LayerMask
     {
 
     }
-
     public enum QueryTriggerInteraction
     {
         UseGlobal,
         Ignore,
         Collide
     }
-
     public static class Physics
     {
         public static int OverlapSphereNonAlloc(Vector3 pos, float range, Collider[] cols)
         {
             return 0;
         }
+        public static int OverlapSphereNonAlloc(Vector3 pos, float range, Collider[] cols, LayerMask mask, QueryTriggerInteraction trigger)
+        {
+            return 0;
+        }
+        public static bool CheckSphere(Vector3 pos, float range, LayerMask mask, QueryTriggerInteraction trigger)
+        {
+            return false;
+        }
     }
     public static class Physics2D
     {
         public static int OverlapCircleNonAlloc(Vector3 pos, float range, Collider2D[] cols)
+        {
+            return 0;
+        }
+        public static int OverlapCircleNonAlloc(Vector3 pos, float range, Collider2D[] cols, LayerMask mask, float minDepth, float maxDepth)
         {
             return 0;
         }

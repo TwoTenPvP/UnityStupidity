@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+
 namespace UnityEngine.SceneManagement
 {
     public class AsyncOperation
@@ -182,6 +183,18 @@ namespace UnityEngine.AI
 
 namespace UnityEngine
 {
+    public struct LayerMask
+    {
+
+    }
+
+    public enum QueryTriggerInteraction
+    {
+        UseGlobal,
+        Ignore,
+        Collide
+    }
+
     public static class Physics
     {
         public static int OverlapSphereNonAlloc(Vector3 pos, float range, Collider[] cols)

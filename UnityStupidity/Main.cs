@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Net;
 
 namespace UnityEngine.SceneManagement
 {
@@ -81,7 +83,27 @@ namespace UnityEngine.Networking
         {
             return 0;
         }
+        public static int AddHost(HostTopology top, int port, string ip)
+        {
+            return 0;
+        }
         public static int AddWebsocketHost(HostTopology top, int port)
+        {
+            return 0;
+        }
+        public static int AddWebsocketHost(HostTopology top, int port, string ip)
+        {
+            return 0;
+        }
+        public static int AddHostWithSimulator(HostTopology top, int mintimeout, int maxTimeout)
+        {
+            return 0;
+        }
+        public static int AddHostWithSimulator(HostTopology top, int mintimeout, int maxTimeout, int port)
+        {
+            return 0;
+        }
+        public static int AddHostWithSimulator(HostTopology top, int mintimeout, int maxTimeout, int port, string ip)
         {
             return 0;
         }
@@ -90,9 +112,15 @@ namespace UnityEngine.Networking
             error = 0;
             return 0;
         }
-        public static void Disconnect(int hostId, int connectionId, out byte error)
+        public static int ConnectWithSimulator(int hostId, string address, int port, int exceptionConnectionId, out byte error, ConnectionSimulatorConfig conf)
         {
             error = 0;
+            return 0;
+        }
+        public static bool Disconnect(int hostId, int connectionId, out byte error)
+        {
+            error = 0;
+            return false;
         }
         public static int GetCurrentRTT(int hostId, int connectionId, out byte error)
         {
@@ -111,6 +139,14 @@ namespace UnityEngine.Networking
         public static NetworkEventType Receive(out int hostId, out int connectionId, out int channelId, byte[] buffer, int bufferSize, out int receivedSize, out byte error)
         {
             hostId = 0;
+            connectionId = 0;
+            channelId = 0;
+            error = 0;
+            receivedSize = 0;
+            return NetworkEventType.Nothing;
+        }
+        public static NetworkEventType ReceiveFromHost(int hostId, out int connectionId, out int channelId, byte[] buffer, int bufferSize, out int receivedSize, out byte error)
+        {
             connectionId = 0;
             channelId = 0;
             error = 0;
@@ -144,11 +180,13 @@ namespace UnityEngine.Networking
     public enum NetworkError
     {
         Ok,
-        Timeout
+        Timeout,
+        CRCMismatch
     }
 
     public class HostTopology
     {
+        public ConnectionConfig DefaultConfig;
         public HostTopology(ConnectionConfig config, int maxCon)
         {
 
@@ -157,11 +195,21 @@ namespace UnityEngine.Networking
 
     public class ConnectionConfig
     {
+        public List<ChannelQOS> Channels;
         public int SendDelay;
         public int AddChannel(QosType type)
         {
             return 0;
         }
+    }
+    public class ConnectionSimulatorConfig
+    {
+
+    }
+    public class ChannelQOS
+    {
+        public bool BelongsToSharedOrderChannel;
+        public QosType QOS;
     }
 }
 namespace UnityEngine.AI
@@ -344,6 +392,10 @@ namespace UnityEngine
     public static class Debug
     {
         public static void Log(string text)
+        {
+
+        }
+        public static void Log(object obj)
         {
 
         }

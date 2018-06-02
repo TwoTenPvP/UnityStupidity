@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4F6A2A66-281A-452B-A939-54A0B5AF5C2D}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>UnityStupidity</RootNamespace>
-    <AssemblyName>UnityStupidity</AssemblyName>
+    <RootNamespace>UnityEngine</RootNamespace>
+    <AssemblyName>UnityEngine</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

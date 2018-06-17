@@ -117,6 +117,11 @@ namespace UnityEngine.Networking
             error = 0;
             return 0;
         }
+        public static int ConnectEndPoint(int hostId, EndPoint endPoint, int exceptionConnectionId, out byte error)
+        {
+            error = 0;
+            return 0;
+        }
         public static bool Disconnect(int hostId, int connectionId, out byte error)
         {
             error = 0;

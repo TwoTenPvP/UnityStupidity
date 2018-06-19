@@ -11,6 +11,10 @@ namespace UnityEngine.SceneManagement
     }
     public static class SceneManager
     {
+        public static bool SetActiveScene(Scene scene)
+        {
+            return false;
+        }
         public static Scene GetActiveScene()
         {
             return new Scene();
